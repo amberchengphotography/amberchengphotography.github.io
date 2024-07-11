@@ -79,17 +79,13 @@ body {
 
 }
 
-.footer h2 {
+.name h2 {
     font-size: 1.8rem; /* Example font size */
     margin-bottom: 10px;
     margin-left: 10px; /* Align to left margin */
 }
 
-.footer p {
+.contact p {
     line-height: 1.6; /* Adjust line height for readability */
     margin-right: 10px; /* Align to right margin */
-}
-
-.footer p {
-    margin: 20px;
 }

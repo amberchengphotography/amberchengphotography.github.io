@@ -9,7 +9,6 @@ body {
     font-family: Futura, Times, serif;
     background-color: #FFFEF9; /* Light beige background */
     color: #2F2B26; /* Brown text color */
-    font-weight: 300;
 }
 
 /* Header styles */
@@ -70,8 +69,6 @@ body {
     padding: 20px;
     background-color: #FFFEF9; /* Light beige background */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .name h2 {

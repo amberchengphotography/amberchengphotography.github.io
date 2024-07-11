@@ -52,20 +52,24 @@ body {
 
 /* Gallery styles */
 .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Gap between items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .gallery-item {
-    overflow: hidden; /* Ensure images don't overflow */
+    margin: 10 10px;
 }
 
 .gallery-item img {
-    width: 100%;
+    max-width: 50%;
     height: auto;
-    object-fit: cover; /* Crop and maintain aspect ratio */
-    aspect-ratio: 3/2; /* Set aspect ratio to 3:2 */
 }
 
 /* Footer styles */

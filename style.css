@@ -31,7 +31,9 @@ body {
 }
 
 .description {
-    margin-bottom: 20px;
+    max-width: 40%; /* Limit width to 40% of the viewport width */
+    margin-left: auto; /* Align to left margin */
+    margin-right: auto; /* Align to right margin */
 }
 
 .description h2 {

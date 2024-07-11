@@ -39,6 +39,7 @@ body {
     font-size: 1.8rem; /* Example font size */
     font-weight: normal; /* Reset font weight to normal */
     margin-bottom: 10px;
+    margin-left: 40px; /* Align to left margin */
 }
 
 .description p {

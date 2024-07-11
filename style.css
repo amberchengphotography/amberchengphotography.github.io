@@ -15,8 +15,8 @@ body {
 .header {
     text-align: center;
     padding: 20px;
-    background-color: none; /* No background color */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
+    background-color: #e5d3b3; /* Light beige background */
+
 }
 
 .header h1 {
@@ -46,7 +46,7 @@ body {
 /* Footer styles */
 .footer {
     padding: 20px;
-    background-color: none; /* No background color */
+    background-color: #e5d3b3; /* Light beige background */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bottom box shadow */
 }
 

@@ -52,18 +52,16 @@ body {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 }
 
 .gallery-row {
     display: flex;
-    justify-content: center;
     margin-bottom: 10px;
 }
 
 .gallery-item {
     width: calc(50% - 10px); /* Adjust width to fit two items per row with margins */
-    margin: 0 5px; /* Margin between items */
+    margin: 5px 5px; /* Margin between items */
     overflow: hidden; /* Ensure images don't overflow */
 }
 

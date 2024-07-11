@@ -64,11 +64,11 @@ body {
 }
 
 .gallery-item {
-    margin: 10 10px;
+    margin: 0 10px;
 }
 
 .gallery-item img {
-    max-width: 50%;
+    max-width: 100%;
     height: auto;
 }
 

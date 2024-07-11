@@ -7,7 +7,7 @@ html, body {
 /* Body styles */
 body {
     font-family: 'Cormorant Garamond', serif;
-    background-color: #e5d3b3; /* Beige background */
+    background-color: #e5d3b3; /* Light beige background */
     color: #664229; /* Brown text color */
 }
 
@@ -15,11 +15,13 @@ body {
 .header {
     text-align: center;
     padding: 20px;
+    background-color: none; /* No background color */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
 }
 
 .header h1 {
     font-size: 2.5rem; /* Example font size */
+    margin-bottom: 0.5rem; /* Adjust spacing */
 }
 
 /* Main styles */
@@ -37,16 +39,29 @@ body {
     margin-bottom: 10px;
 }
 
+.description p {
+    line-height: 1.6; /* Adjust line height for readability */
+}
+
 /* Footer styles */
 .footer {
     padding: 20px;
+    background-color: none; /* No background color */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bottom box shadow */
+}
+
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer .footer-row {
     margin-bottom: 10px;
+    font-size: 1rem; /* Example font size */
 }
 
 .footer p {
-    font-size: 1rem; /* Example font size */
+    margin: 0;
 }

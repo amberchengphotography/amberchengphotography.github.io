@@ -7,7 +7,6 @@ html, body {
 /* Body styles */
 body {
     font-family: Futura, Times, serif;
-    font-weight: 0.1;
     background-color: #FFFEF9; /* Light beige background */
     color: #2F2B26; /* Brown text color */
 }
@@ -17,14 +16,11 @@ body {
     text-align: center;
     padding: 20px;
     background-color: #FFFEF9; /* Light beige background */
-    font-family: Futura, Times, serif;
-    font-weight: 0.1;
-
 }
 
 .header h1 {
     font-size: 2.5rem; /* Example font size */
-    font-weight: 0.1;
+    font-weight: normal; /* Reset font weight to normal */
     margin-bottom: 0.5rem; /* Adjust spacing */
 }
 
@@ -41,13 +37,12 @@ body {
 
 .description h2 {
     font-size: 1.8rem; /* Example font size */
-    font-weight: 0.1;
+    font-weight: normal; /* Reset font weight to normal */
     margin-bottom: 10px;
 }
 
 .description p {
     line-height: 1.6; /* Adjust line height for readability */
-    font-weight: 0.1;
 }
 
 /* Gallery styles */
@@ -76,7 +71,6 @@ body {
 .footer {
     padding: 20px;
     background-color: #FFFEF9; /* Light beige background */
-
 }
 
 .name h2 {

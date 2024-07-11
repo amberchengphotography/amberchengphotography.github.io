@@ -76,7 +76,7 @@ body {
 .name h2 {
     font-size: 1.8rem; /* Example font size */
     margin-bottom: 10px;
-    margin-left: 10px; /* Align to left margin */
+    margin-right: 10px; /* Align to left margin */
 }
 
 .contact p {

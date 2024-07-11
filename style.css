@@ -24,6 +24,7 @@ body {
 
 .header h1 {
     font-size: 2.5rem; /* Example font size */
+    font-weight: 1;
     margin-bottom: 0.5rem; /* Adjust spacing */
 }
 
@@ -51,23 +52,26 @@ body {
 .gallery {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 .gallery-row {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .gallery-item {
-    margin: 0 10px;
+    width: calc(50% - 10px); /* Adjust width to fit two items per row with margins */
+    margin: 0 5px; /* Margin between items */
+    overflow: hidden; /* Ensure images don't overflow */
 }
 
 .gallery-item img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
-}
+    object-fit: cover; /* Crop and maintain aspect ratio */
+    aspect-ratio: 3/2; /* Set aspect ratio to 3:2 */
 
 /* Footer styles */
 .footer {

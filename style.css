@@ -7,6 +7,7 @@ html, body {
 /* Body styles */
 body {
     font-family: Futura, Times, serif;
+    font-weight: 10
     background-color: #FFFEF9; /* Light beige background */
     color: #2F2B26; /* Brown text color */
 }
@@ -33,7 +34,6 @@ body {
 .description {
     max-width: 40%; /* Limit width to 40% of the viewport width */
     margin-left: auto; /* Align to left margin */
-    margin-right: auto; /* Align to right margin */
 }
 
 .description h2 {
@@ -49,7 +49,7 @@ body {
 .footer {
     padding: 20px;
     background-color: #FFFEF9; /* Light beige background */
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bottom box shadow */
+
 }
 
 .footer .footer-content {
@@ -59,10 +59,18 @@ body {
     flex-wrap: wrap;
 }
 
+.footer .footer-left {
+    flex: 1; /* Take remaining space */
+}
+
+.footer .footer-right {
+    flex: 1; /* Take remaining space */
+    text-align: right; /* Align content to the right */
+}
+
 .footer .footer-row {
     margin-bottom: 10px;
     font-size: 1rem; /* Example font size */
-}
 
 .footer p {
     margin: 0;

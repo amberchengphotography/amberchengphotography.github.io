@@ -1,1 +1,48 @@
+/* Reset default browser styles */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: beige; /* Main color */
+    color: brown; /* Secondary color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Container styles */
+.container {
+    text-align: center;
+    background-color: white; /* Background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+    max-width: 600px;
+    width: 90%;
+}
+
+/* Heading styles */
+h1 {
+    color: brown; /* Secondary color */
+    margin-bottom: 10px;
+}
+
+/* Paragraph styles */
+p {
+    color: black; /* Text color */
+    line-height: 1.6;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+        max-width: 90%;
+    }
+}
 

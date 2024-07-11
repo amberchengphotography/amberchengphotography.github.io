@@ -52,24 +52,24 @@ body {
 
 /* Gallery styles */
 .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Gap between items */
+    justify-items: center; /* Center items horizontally */
 }
 
 .gallery-row {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Bottom margin for each row */
 }
 
 .gallery-item {
-    margin: 0 10px;
+    overflow: hidden; /* Ensure images don't overflow */
 }
 
 .gallery-item img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Ensure image takes full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Crop and maintain aspect ratio */
 }
 
 /* Footer styles */

@@ -1,39 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amber Cheng Photography</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <div class="header-content">
-            <h1>Amber Cheng Photography</h1>
-        </div>
-    </header>
+/* Reset default browser styles */
+html, body {
+    margin: 0;
+    padding: 0;
+}
 
-    <main class="main">
-        <section class="description">
-            <h2>About Me</h2>
-            <p>Welcome to Amber Cheng Photography. Insert your description here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget ante sit amet quam vestibulum sodales.</p>
-        </section>
-        <section class="gallery" id="gallerySection"> 
-            <!-- Gallery content will be dynamically inserted here by JavaScript -->
-        </section>
-    </main>
+/* Body styles */
+body {
+    font-family: Futura, Times, serif;
+    background-color: #e5d3b3; /* Light beige background */
+    color: #664229; /* Brown text color */
+}
 
-    <footer class="footer">
-        <section class="name">
-            <h2>Amber Cheng Photography</h2>
-        </section>
-        
-        <section class="contact">
-            <p>Email: amberchengphotography@gmail.com</p>
-            <p>Instagram: @2_am.ber</p>
-        </section>
-    </footer>
+/* Header styles */
+.header {
+    text-align: center;
+    padding: 20px;
+    background-color: #e5d3b3; /* Light beige background */
+}
 
-    <script src="script.js"></script> <!-- Include your JavaScript file -->
-</body>
-</html>
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Main styles */
+.main {
+    padding: 20px;
+    margin: 20px;
+}
+
+.description {
+    max-width: 60%; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    text-align: center; /* Center align text */
+}
+
+.description h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.description p {
+    line-height: 1.6;
+}
+
+/* Gallery styles */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Gap between items */
+    justify-items: center; /* Center items horizontally */
+}
+
+.gallery-item {
+    overflow: hidden; /* Ensure images don't overflow */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Footer styles */
+.footer {
+    padding: 20px;
+    background-color: #e5d3b3; /* Light beige background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    margin-left: 10px; /* Align to left margin */
+}
+
+.contact p {
+    line-height: 1.6;
+    margin-right: 10px; /* Align to right margin */
+}

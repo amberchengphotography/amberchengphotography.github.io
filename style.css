@@ -51,9 +51,10 @@ body {
 /* Gallery styles */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    grid-template-columns: calc(50% - 10px) calc(50% - 10px); /* Two columns with 10px gap */
     gap: 10px; /* Gap between items */
     justify-items: center; /* Center items horizontally */
+    padding: 0 10px; /* Padding on left and right */
 }
 
 .gallery-row {

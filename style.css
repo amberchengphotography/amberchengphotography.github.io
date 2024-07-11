@@ -6,16 +6,16 @@ html, body {
 
 /* Body styles */
 body {
-    font-family: "Times New Roman", Times, serif;
-    background-color: #e5d3b3; /* Light beige background */
-    color: #664229; /* Brown text color */
+    font-family: Futura, Times, serif;
+    background-color: #FFFEF9; /* Light beige background */
+    color: #2F2B26; /* Brown text color */
 }
 
 /* Header styles */
 .header {
     text-align: center;
     padding: 20px;
-    background-color: #e5d3b3; /* Light beige background */
+    background-color: #FFFEF9; /* Light beige background */
 
 }
 
@@ -48,7 +48,7 @@ body {
 /* Footer styles */
 .footer {
     padding: 20px;
-    background-color: #e5d3b3; /* Light beige background */
+    background-color: #FFFEF9; /* Light beige background */
     box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bottom box shadow */
 }
 

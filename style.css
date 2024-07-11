@@ -19,9 +19,8 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem; /* Example font size */
-    font-weight: normal; /* Reset font weight to normal */
-    margin-bottom: 0.5rem; /* Adjust spacing */
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 /* Main styles */
@@ -31,18 +30,18 @@ body {
 }
 
 .description {
-    max-width: 40%; /* Limit width to 40% of the viewport width */
-    margin-left: 10px; /* Align to left margin */
+    max-width: 60%; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    text-align: center; /* Center align text */
 }
 
 .description h2 {
-    font-size: 1.8rem; /* Example font size */
-    font-weight: normal; /* Reset font weight to normal */
+    font-size: 1.8rem;
     margin-bottom: 10px;
 }
 
 .description p {
-    line-height: 1.6; /* Adjust line height for readability */
+    line-height: 1.6;
 }
 
 /* Gallery styles */
@@ -62,24 +61,25 @@ body {
 }
 
 .gallery-item img {
-    width: 100%; /* Ensure image takes full width of its container */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover; /* Crop and maintain aspect ratio */
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
 /* Footer styles */
 .footer {
     padding: 20px;
     background-color: #FFFEF9; /* Light beige background */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .name h2 {
-    font-size: 1.8rem; /* Example font size */
+    font-size: 1.8rem;
     margin-bottom: 10px;
-    margin-left: 10px; /* Align to left margin */
 }
 
 .contact p {
-    line-height: 1.6; /* Adjust line height for readability */
-    margin-right: 10px; /* Align to right margin */
+    line-height: 1.6;
 }

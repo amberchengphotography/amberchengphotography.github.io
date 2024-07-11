@@ -6,9 +6,9 @@ html, body {
 
 /* Body styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: beige; /* Main color */
-    color: brown; /* Secondary color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #F5F5DC; /* Beige color */
+    color: brown; /* Brown color for text */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,9 @@ body {
 
 /* Heading styles */
 h1 {
-    color: brown; /* Secondary color */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant font */
+    font-weight: 300; /* Thin font weight */
+    color: brown; /* Brown color */
     margin-bottom: 10px;
 }
 
@@ -45,4 +47,3 @@ p {
         max-width: 90%;
     }
 }
-

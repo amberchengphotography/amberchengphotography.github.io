@@ -7,43 +7,67 @@ html, body {
 /* Body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #F5F5DC; /* Beige color */
+    background-color: #F5F5DC; /* Beige background */
     color: brown; /* Brown color for text */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full viewport height */
 }
 
-/* Container styles */
-.container {
+/* Header styles */
+.header {
     text-align: center;
-    background-color: white; /* Background color */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for container */
-    max-width: 600px;
-    width: 90%;
+    background-color: white; /* White background for header */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow */
 }
 
-/* Heading styles */
-h1 {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Elegant font */
+.header h1 {
     font-weight: 300; /* Thin font weight */
-    color: brown; /* Brown color */
+}
+
+/* Main styles */
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+}
+
+.description {
+    width: 70%; /* Width of description section */
+}
+
+.description h2 {
     margin-bottom: 10px;
 }
 
-/* Paragraph styles */
-p {
-    color: black; /* Text color */
-    line-height: 1.6;
+/* Footer styles */
+.footer {
+    background-color: white; /* White background for footer */
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Bottom box shadow */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-left {
+    width: 30%; /* Width of left side */
+}
+
+.footer-right {
+    width: 70%; /* Width of right side */
+}
+
+.footer-row {
+    margin-bottom: 10px;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
-    .container {
-        padding: 10px;
-        max-width: 90%;
+    .main {
+        flex-direction: column;
+    }
+
+    .description {
+        width: 100%;
     }
 }

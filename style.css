@@ -7,15 +7,15 @@ html, body {
 /* Body styles */
 body {
     font-family: Futura, Times, serif;
-    background-color: #e5d3b3; /* Light beige background */
-    color: #664229; /* Brown text color */
+    background-color: #FFFEF9; /* Light beige background */
+    color: #2F2B26; /* Brown text color */
 }
 
 /* Header styles */
 .header {
     text-align: center;
     padding: 20px;
-    background-color: #e5d3b3; /* Light beige background */
+    background-color: #FFFEF9; /* Light beige background */
 }
 
 .header h1 {
@@ -57,7 +57,7 @@ body {
 }
 
 .gallery-item img {
-    width: 100%;
+    width: 50%;
     height: auto;
     object-fit: cover;
 }
@@ -65,7 +65,7 @@ body {
 /* Footer styles */
 .footer {
     padding: 20px;
-    background-color: #e5d3b3; /* Light beige background */
+    background-color: #FFFEF9; /* Light beige background */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -78,6 +78,6 @@ body {
 }
 
 .contact p {
-    line-height: 1.6;
+    line-height: 1;
     margin-right: 10px; /* Align to right margin */
 }

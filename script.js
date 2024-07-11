@@ -1,12 +1,19 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Target the gallery section
-    const gallerySection = document.getElementById("gallerySection");
-
     // Array of image filenames
     const imageFiles = ["1.jpg", "2.jpg", "3.jpg", "4.jpg"];
 
+    // Reference to the gallery section
+    const gallerySection = document.querySelector(".gallery");
+
     // Loop through imageFiles array to create gallery items
     imageFiles.forEach((filename, index) => {
+        // Create gallery row container for every 2 images
+        if (index % 2 === 0) {
+            var galleryRow = document.createElement("div");
+            galleryRow.classList.add("gallery-row");
+            gallerySection.appendChild(galleryRow);
+        }
+
         // Create gallery item container
         const galleryItem = document.createElement("div");
         galleryItem.classList.add("gallery-item");
@@ -20,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Append image to gallery item
         galleryItem.appendChild(image);
 
-        // Append gallery item to gallery section
-        gallerySection.appendChild(galleryItem);
+        // Append gallery item to the current gallery row
+        galleryRow.appendChild(galleryItem);
     });
 });

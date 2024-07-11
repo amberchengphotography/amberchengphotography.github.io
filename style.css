@@ -9,17 +9,20 @@ body {
     font-family: Futura, Times, serif;
     background-color: #FFFEF9; /* Light beige background */
     color: #2F2B26; /* Brown text color */
+    font-weight: 300;
 }
 
 /* Header styles */
 .header {
     text-align: center;
     padding: 20px;
+    font-weight: 300;
     background-color: #FFFEF9; /* Light beige background */
 }
 
 .header h1 {
     font-size: 2.5rem;
+    font-weight: 300;
     margin-bottom: 0.5rem;
 }
 
@@ -30,13 +33,13 @@ body {
 }
 
 .description {
-    max-width: 60%; /* Adjust width as needed */
-    margin: 0 auto; /* Center align */
-    text-align: center; /* Center align text */
+    max-width: 40%; /* Adjust width as needed */
+    margin-left: 10px;
 }
 
 .description h2 {
     font-size: 1.8rem;
+    font-weight: 300;
     margin-bottom: 10px;
 }
 
@@ -73,11 +76,13 @@ body {
 
 .name h2 {
     font-size: 1.8rem;
+    font-weight: 300;
     margin-bottom: 10px;
     margin-left: 10px; /* Align to left margin */
 }
 
 .contact p {
-    line-height: 1;
+    line-height: 0;
+    margin-top: 30px;
     margin-right: 10px; /* Align to right margin */
 }

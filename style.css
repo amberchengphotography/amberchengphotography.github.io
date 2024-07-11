@@ -38,19 +38,21 @@ body {
 .description h2 {
     font-size: 1.8rem; /* Example font size */
     font-weight: normal; /* Reset font weight to normal */
-    margin-bottom: 10px;
-    margin-left: 40px; /* Align to left margin */
+    margin-bottom: 20px;
+    margin-left: 10px; /* Align to left margin */
 }
 
 .description p {
     line-height: 1.6; /* Adjust line height for readability */
+    margin-left: 40px;
+    margin-bottom: 40px;
 }
 
 /* Gallery styles */
 .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 20px; /* Gap between items */
+    gap: 10px; /* Gap between items */
     justify-items: center; /* Center items horizontally */
 }
 
@@ -77,10 +79,10 @@ body {
 .name h2 {
     font-size: 1.8rem; /* Example font size */
     margin-bottom: 10px;
-    margin-right: 10px; /* Align to left margin */
+    margin-left: 10px; /* Align to left margin */
 }
 
 .contact p {
     line-height: 1.6; /* Adjust line height for readability */
-    margin-right: 10px; /* Align to right margin */
+    margin-left: 10px; /* Align to right margin */
 }

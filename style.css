@@ -47,6 +47,28 @@ body {
     line-height: 1.6; /* Adjust line height for readability */
 }
 
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gallery-item {
+    margin: 0 10px;
+}
+
+.gallery-item img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Footer styles */
 .footer {
     padding: 20px;

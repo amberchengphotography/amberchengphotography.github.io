@@ -7,142 +7,122 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
-            height: 100vh;
-            width: 100vw;
-            background-color: #1a1a1a;
-            transition: background-color 1s ease;
-        }
-
-        body.loaded {
-            background-color: #f5f5f5;
-        }
-
-        .intro {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            z-index: 1000;
-            animation: fadeOut 1s ease 6s forwards;
-        }
-
-        .intro-name {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4rem; /* Space between AMBER and CHENG */
-        }
-
-        .name-part {
-            display: flex;
-            gap: 1rem; /* Space between letters */
-        }
+        /* ... previous styles remain the same until .letter ... */
 
         .letter {
             font-size: 4rem;
             color: #ffffff;
             text-transform: uppercase;
-            font-weight: 500; /* Slightly bolder */
+            font-weight: 500;
             opacity: 0;
-            transform: translateY(-100vh) rotate(random(-45, 45));
+            position: relative;
             display: inline-block;
         }
 
-        /* Individual letter animations */
-        .letter:nth-child(1) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.0s forwards; }
-        .letter:nth-child(2) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards; }
-        .letter:nth-child(3) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards; }
-        .letter:nth-child(4) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards; }
-        .letter:nth-child(5) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards; }
-
-        .letter.second-word:nth-child(1) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards; }
-        .letter.second-word:nth-child(2) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s forwards; }
-        .letter.second-word:nth-child(3) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s forwards; }
-        .letter.second-word:nth-child(4) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards; }
-        .letter.second-word:nth-child(5) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.0s forwards; }
-
-        @keyframes dropLetter {
+        @keyframes randomEntry {
             0% {
-                transform: translateY(-100vh) rotate(45deg);
+                transform: translate(var(--startX), var(--startY)) rotate(var(--startRotate));
                 opacity: 0;
             }
-            60% {
-                transform: translateY(0) rotate(-10deg);
+            70% {
+                transform: translate(0, 0) rotate(var(--midRotate));
                 opacity: 1;
             }
-            80% {
-                transform: translateY(0) rotate(5deg);
+            85% {
+                transform: translate(0, 0) rotate(var(--endRotate));
                 opacity: 1;
             }
             100% {
-                transform: translateY(0) rotate(0);
+                transform: translate(0, 0) rotate(0);
                 opacity: 1;
             }
         }
 
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                visibility: hidden;
-            }
-        }
-
-        .container {
-            display: flex;
-            height: 100vh;
-            width: 100vw;
-            position: relative;
-            opacity: 0;
-            animation: revealContent 1.5s ease 6.5s forwards;
-        }
-
-        /* ... rest of your previous styles remain the same ... */
-
+        /* ... rest of your previous styles ... */
     </style>
 </head>
 <body>
     <div class="intro">
         <div class="intro-name">
             <div class="name-part">
-                <span class="letter">A</span>
-                <span class="letter">M</span>
-                <span class="letter">B</span>
-                <span class="letter">E</span>
-                <span class="letter">R</span>
+                <span class="letter" data-letter="A">A</span>
+                <span class="letter" data-letter="M">M</span>
+                <span class="letter" data-letter="B">B</span>
+                <span class="letter" data-letter="E">E</span>
+                <span class="letter" data-letter="R">R</span>
             </div>
             <div class="name-part">
-                <span class="letter second-word">C</span>
-                <span class="letter second-word">H</span>
-                <span class="letter second-word">E</span>
-                <span class="letter second-word">N</span>
-                <span class="letter second-word">G</span>
+                <span class="letter" data-letter="C">C</span>
+                <span class="letter" data-letter="H">H</span>
+                <span class="letter" data-letter="E">E</span>
+                <span class="letter" data-letter="N">N</span>
+                <span class="letter" data-letter="G">G</span>
             </div>
         </div>
     </div>
-    <!-- ... rest of your previous HTML remains the same ... -->
-</body>
-<script>
-    window.addEventListener('load', function() {
-        setTimeout(function() {
-            document.body.classList.add('loaded');
-        }, 5500);
-    });
+    <!-- ... rest of your previous HTML ... -->
 
-    // Add random rotation to each letter
-    document.querySelectorAll('.letter').forEach(letter => {
-        const randomRotation = Math.random() * 90 - 45; // Random rotation between -45 and 45 degrees
-        letter.style.transform = `translateY(-100vh) rotate(${randomRotation}deg)`;
-    });
-</script>
+    <script>
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        function getRandomStartPosition() {
+            const positions = [
+                { x: -100, y: -100 }, // top-left
+                { x: 0, y: -100 },    // top
+                { x: 100, y: -100 },  // top-right
+                { x: 100, y: 0 },     // right
+                { x: 100, y: 100 },   // bottom-right
+                { x: 0, y: 100 },     // bottom
+                { x: -100, y: 100 },  // bottom-left
+                { x: -100, y: 0 }     // left
+            ];
+            return positions[Math.floor(Math.random() * positions.length)];
+        }
+
+        function initializeLetterAnimations() {
+            const letters = document.querySelectorAll('.letter');
+            
+            letters.forEach((letter, index) => {
+                // Get random start position
+                const startPos = getRandomStartPosition();
+                
+                // Generate random rotations
+                const startRotate = getRandomInt(-360, 360);
+                const midRotate = getRandomInt(-45, 45);
+                const endRotate = getRandomInt(-20, 20);
+                
+                // Set custom properties for the animation
+                letter.style.setProperty('--startX', `${startPos.x}vw`);
+                letter.style.setProperty('--startY', `${startPos.y}vh`);
+                letter.style.setProperty('--startRotate', `${startRotate}deg`);
+                letter.style.setProperty('--midRotate', `${midRotate}deg`);
+                letter.style.setProperty('--endRotate', `${endRotate}deg`);
+
+                // Set animation with random delay
+                letter.style.animation = `randomEntry 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.4}s forwards`;
+            });
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            initializeLetterAnimations();
+            
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 5000);
+        });
+
+        // Reinitialize animations when page is refreshed
+        window.addEventListener('beforeunload', function() {
+            localStorage.setItem('shouldAnimate', 'true');
+        });
+
+        // Optional: Add click handler to replay animation
+        document.querySelector('.intro').addEventListener('click', function() {
+            initializeLetterAnimations();
+        });
+    </script>
+</body>
 </html>

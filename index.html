@@ -65,12 +65,8 @@
             gap: 0.5rem;
         }
 
-        .split-title span {
-            display: block;
-            font-size: 2.5rem;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 3px;
+        .split-title h2 {
+            margin-bottom: 0.5rem;
         }
 
         .view-text {
@@ -78,6 +74,8 @@
             color: #666;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         .half:hover {
@@ -88,26 +86,13 @@
             background-color: #ebebeb;
         }
 
-        .left:hover ~ .footer {
-            transform: translateX(10%);
-        }
-
         .right:hover {
             background-color: #dbdbdb;
         }
 
-        .right:hover ~ .footer {
-            transform: translateX(-10%);
-        }
-
-        .half a {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            text-decoration: none;
+        .half:hover .footer {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .footer {
@@ -117,7 +102,16 @@
             width: 100%;
             text-align: center;
             z-index: 10;
-            transition: transform 0.5s ease;
+            opacity: 0;
+            transition: all 0.5s ease;
+        }
+
+        .footer-left {
+            transform: translateX(-50px);
+        }
+
+        .footer-right {
+            transform: translateX(50px);
         }
 
         .footer p {
@@ -130,7 +124,7 @@
             color: #333;
             text-decoration: none;
             transition: color 0.3s ease;
-            margin: 0 10px;
+            margin: 0 5px;
         }
 
         .footer a:hover {
@@ -151,12 +145,8 @@
                 height: 50vh;
             }
             
-            h2, .split-title span {
+            h2 {
                 font-size: 2rem;
-            }
-
-            .footer {
-                bottom: 10px;
             }
         }
     </style>
@@ -164,34 +154,43 @@
 <body>
     <div class="container">
         <div class="half left">
-            <a href="architecture.html"></a>
             <div class="content">
                 <h2>Architecture</h2>
-                <p class="view-text">View Portfolio →</p>
+                <a href="architecture.html" class="view-text">View Portfolio →</a>
+            </div>
+            <div class="footer footer-left">
+                <p>
+                    Amber Cheng | Instagram: 
+                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
+                    </a>
+                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
+                    </a>
+                </p>
             </div>
         </div>
         <div class="half right">
-            <a href="media.html"></a>
             <div class="content">
                 <div class="split-title">
-                    <span>Photography</span>
-                    <span>&</span>
-                    <span>Videography</span>
+                    <h2>Photography</h2>
+                    <h2>&</h2>
+                    <h2>Videography</h2>
                 </div>
-                <p class="view-text">View Portfolio →</p>
+                <a href="media.html" class="view-text">View Portfolio →</a>
+            </div>
+            <div class="footer footer-right">
+                <p>
+                    Amber Cheng | Instagram: 
+                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
+                    </a>
+                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
+                    </a>
+                </p>
             </div>
         </div>
-        <footer class="footer">
-            <p>
-                <a href="https://www.instagram.com/2_am.ber/" target="_blank">
-                    <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
-                </a>
-                |
-                <a href="https://www.instagram.com/a.rcheng/" target="_blank">
-                    <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
-                </a>
-            </p>
-        </footer>
     </div>
 </body>
 </html>

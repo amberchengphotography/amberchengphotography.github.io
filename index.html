@@ -65,8 +65,11 @@
             gap: 0.5rem;
         }
 
-        .split-title h2 {
-            margin-bottom: 0.5rem;
+        .second-line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
         }
 
         .view-text {
@@ -90,28 +93,14 @@
             background-color: #dbdbdb;
         }
 
-        .half:hover .footer {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
         .footer {
             position: fixed;
             bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            z-index: 10;
             opacity: 0;
             transition: all 0.5s ease;
-        }
-
-        .footer-left {
-            transform: translateX(-50px);
-        }
-
-        .footer-right {
-            transform: translateX(50px);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 10;
         }
 
         .footer p {
@@ -125,10 +114,31 @@
             text-decoration: none;
             transition: color 0.3s ease;
             margin: 0 5px;
+            pointer-events: auto;
         }
 
         .footer a:hover {
             color: #666;
+        }
+
+        .footer-left {
+            right: 2rem;
+            transform: translateX(50px);
+        }
+
+        .footer-right {
+            left: 2rem;
+            transform: translateX(-50px);
+        }
+
+        .left:hover .footer-left {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .right:hover .footer-right {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         .instagram-icon {
@@ -174,8 +184,10 @@
             <div class="content">
                 <div class="split-title">
                     <h2>Photography</h2>
-                    <h2>&</h2>
-                    <h2>Videography</h2>
+                    <div class="second-line">
+                        <h2 style="margin-bottom: 0;">&</h2>
+                        <h2 style="margin-bottom: 0;">Videography</h2>
+                    </div>
                 </div>
                 <a href="media.html" class="view-text">View Portfolio →</a>
             </div>

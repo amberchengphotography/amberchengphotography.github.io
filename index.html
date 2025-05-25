@@ -7,7 +7,51 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ... previous styles remain the same until .letter ... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            background-color: #1a1a1a;
+            transition: background-color 1s ease;
+        }
+
+        body.loaded {
+            background-color: #f5f5f5;
+        }
+
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+            z-index: 1000;
+            animation: fadeOut 1s ease 6s forwards;
+        }
+
+        .intro-name {
+            width: 80vw;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .name-part {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
 
         .letter {
             font-size: 4rem;
@@ -38,29 +82,218 @@
             }
         }
 
-        /* ... rest of your previous styles ... */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            opacity: 0;
+            animation: revealContent 1.5s ease 6.5s forwards;
+        }
+
+        .half {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .left {
+            background-color: #f5f5f5;
+        }
+
+        .right {
+            background-color: #e5e5e5;
+        }
+
+        .content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+
+        .split-title {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 1rem;
+        }
+
+        .second-line {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.2rem;
+        }
+
+        .view-text {
+            font-size: 1rem;
+            color: #666;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .half:hover {
+            flex: 1.2;
+        }
+
+        .left:hover {
+            background-color: #ebebeb;
+        }
+
+        .right:hover {
+            background-color: #dbdbdb;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 20px;
+            opacity: 0;
+            transition: all 0.5s ease;
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .footer p {
+            color: #333;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin: 0 5px;
+            pointer-events: auto;
+        }
+
+        .footer-left {
+            left: 2rem;
+            transform: translateX(-50px);
+        }
+
+        .footer-right {
+            right: 2rem;
+            transform: translateX(50px);
+        }
+
+        .left:hover .footer-left {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .right:hover .footer-right {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @keyframes revealContent {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .letter {
+                font-size: 2.5rem;
+            }
+            .container {
+                flex-direction: column;
+            }
+            .half {
+                height: 50vh;
+            }
+            h2 {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="intro">
         <div class="intro-name">
             <div class="name-part">
-                <span class="letter" data-letter="A">A</span>
-                <span class="letter" data-letter="M">M</span>
-                <span class="letter" data-letter="B">B</span>
-                <span class="letter" data-letter="E">E</span>
-                <span class="letter" data-letter="R">R</span>
+                <span class="letter">A</span>
+                <span class="letter">M</span>
+                <span class="letter">B</span>
+                <span class="letter">E</span>
+                <span class="letter">R</span>
             </div>
             <div class="name-part">
-                <span class="letter" data-letter="C">C</span>
-                <span class="letter" data-letter="H">H</span>
-                <span class="letter" data-letter="E">E</span>
-                <span class="letter" data-letter="N">N</span>
-                <span class="letter" data-letter="G">G</span>
+                <span class="letter">C</span>
+                <span class="letter">H</span>
+                <span class="letter">E</span>
+                <span class="letter">N</span>
+                <span class="letter">G</span>
             </div>
         </div>
     </div>
-    <!-- ... rest of your previous HTML ... -->
+    <div class="container">
+        <div class="half left">
+            <div class="content">
+                <h2>Architecture</h2>
+                <a href="architecture.html" class="view-text">View Portfolio →</a>
+            </div>
+            <div class="footer footer-left">
+                <p>
+                    Amber Cheng | Instagram: 
+                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
+                    </a>
+                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
+                    </a>
+                </p>
+            </div>
+        </div>
+        <div class="half right">
+            <div class="content">
+                <div class="split-title">
+                    <h2>Photography</h2>
+                    <div class="second-line">
+                        <h2 style="margin-bottom: 0;">&</h2>
+                        <h2 style="margin-bottom: 0;">Videography</h2>
+                    </div>
+                </div>
+                <a href="media.html" class="view-text">View Portfolio →</a>
+            </div>
+            <div class="footer footer-right">
+                <p>
+                    Amber Cheng | Instagram: 
+                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
+                    </a>
+                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
+                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
 
     <script>
         function getRandomInt(min, max) {
@@ -69,14 +302,14 @@
 
         function getRandomStartPosition() {
             const positions = [
-                { x: -100, y: -100 }, // top-left
-                { x: 0, y: -100 },    // top
-                { x: 100, y: -100 },  // top-right
-                { x: 100, y: 0 },     // right
-                { x: 100, y: 100 },   // bottom-right
-                { x: 0, y: 100 },     // bottom
-                { x: -100, y: 100 },  // bottom-left
-                { x: -100, y: 0 }     // left
+                { x: -100, y: -100 },
+                { x: 0, y: -100 },
+                { x: 100, y: -100 },
+                { x: 100, y: 0 },
+                { x: 100, y: 100 },
+                { x: 0, y: 100 },
+                { x: -100, y: 100 },
+                { x: -100, y: 0 }
             ];
             return positions[Math.floor(Math.random() * positions.length)];
         }
@@ -85,43 +318,26 @@
             const letters = document.querySelectorAll('.letter');
             
             letters.forEach((letter, index) => {
-                // Get random start position
                 const startPos = getRandomStartPosition();
-                
-                // Generate random rotations
                 const startRotate = getRandomInt(-360, 360);
                 const midRotate = getRandomInt(-45, 45);
                 const endRotate = getRandomInt(-20, 20);
                 
-                // Set custom properties for the animation
                 letter.style.setProperty('--startX', `${startPos.x}vw`);
                 letter.style.setProperty('--startY', `${startPos.y}vh`);
                 letter.style.setProperty('--startRotate', `${startRotate}deg`);
                 letter.style.setProperty('--midRotate', `${midRotate}deg`);
                 letter.style.setProperty('--endRotate', `${endRotate}deg`);
 
-                // Set animation with random delay
                 letter.style.animation = `randomEntry 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) ${index * 0.4}s forwards`;
             });
         }
 
-        // Initialize animations when page loads
         window.addEventListener('load', function() {
             initializeLetterAnimations();
-            
             setTimeout(function() {
                 document.body.classList.add('loaded');
             }, 5000);
-        });
-
-        // Reinitialize animations when page is refreshed
-        window.addEventListener('beforeunload', function() {
-            localStorage.setItem('shouldAnimate', 'true');
-        });
-
-        // Optional: Add click handler to replay animation
-        document.querySelector('.intro').addEventListener('click', function() {
-            initializeLetterAnimations();
         });
     </script>
 </body>

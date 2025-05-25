@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Cheng - Architecture & Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -57,6 +59,20 @@
             margin-bottom: 1rem;
         }
 
+        .split-title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .split-title span {
+            display: block;
+            font-size: 2.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
         .view-text {
             font-size: 1rem;
             color: #666;
@@ -72,8 +88,16 @@
             background-color: #ebebeb;
         }
 
+        .left:hover ~ .footer {
+            transform: translateX(10%);
+        }
+
         .right:hover {
             background-color: #dbdbdb;
+        }
+
+        .right:hover ~ .footer {
+            transform: translateX(-10%);
         }
 
         .half a {
@@ -93,12 +117,29 @@
             width: 100%;
             text-align: center;
             z-index: 10;
+            transition: transform 0.5s ease;
         }
 
         .footer p {
             color: #333;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             letter-spacing: 1px;
+        }
+
+        .footer a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            margin: 0 10px;
+        }
+
+        .footer a:hover {
+            color: #666;
+        }
+
+        .instagram-icon {
+            font-size: 0.8rem;
+            margin-right: 3px;
         }
 
         @media (max-width: 768px) {
@@ -110,12 +151,15 @@
                 height: 50vh;
             }
             
-            h2 {
+            h2, .split-title span {
                 font-size: 2rem;
+            }
+
+            .footer {
+                bottom: 10px;
             }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -129,12 +173,24 @@
         <div class="half right">
             <a href="media.html"></a>
             <div class="content">
-                <h2>Photography & Videography</h2>
+                <div class="split-title">
+                    <span>Photography</span>
+                    <span>&</span>
+                    <span>Videography</span>
+                </div>
                 <p class="view-text">View Portfolio →</p>
             </div>
         </div>
         <footer class="footer">
-            <p>© Amber Cheng</p>
+            <p>
+                <a href="https://www.instagram.com/2_am.ber/" target="_blank">
+                    <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
+                </a>
+                |
+                <a href="https://www.instagram.com/a.rcheng/" target="_blank">
+                    <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
+                </a>
+            </p>
         </footer>
     </div>
 </body>

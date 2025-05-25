@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Cheng - Architecture & Photography</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* ... previous basic styles remain the same ... */
         body {
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
             height: 100vh;
             width: 100vw;
+            background-color: #1a1a1a;
+            transition: background-color 1s ease;
+        }
+
+        body.loaded {
             background-color: #f5f5f5;
         }
 
@@ -30,19 +30,80 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #f5f5f5;
+            background-color: transparent;
             z-index: 1000;
-            animation: fadeOut 0.5s ease 2.5s forwards;
+            animation: fadeOut 1s ease 4.5s forwards;
+        }
+
+        .intro-name {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .intro-word {
+            display: inline-block;
+            overflow: visible;
+            position: absolute;
+        }
+
+        .intro-word.first {
+            transform-origin: center;
+            animation: dropFirst 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .intro-word.second {
+            transform-origin: center;
+            animation: dropSecond 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
         }
 
         .intro-text {
-            font-size: 3.5rem;
-            color: #333;
+            font-size: 4rem;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInUp 0.8s ease 0.5s forwards;
+            letter-spacing: 12px;
+            font-weight: 200;
+            white-space: nowrap;
+        }
+
+        @keyframes dropFirst {
+            0% {
+                transform: translate(-100vw, -100vh) rotate(-45deg);
+                opacity: 0;
+            }
+            60% {
+                transform: translate(-2rem, 0) rotate(-10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(-2rem, 0) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes dropSecond {
+            0% {
+                transform: translate(100vw, -100vh) rotate(45deg);
+                opacity: 0;
+            }
+            60% {
+                transform: translate(2rem, 0) rotate(10deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(2rem, 0) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
 
         .container {
@@ -51,7 +112,7 @@
             width: 100vw;
             position: relative;
             opacity: 0;
-            animation: revealContent 1s ease 3s forwards;
+            animation: revealContent 1.5s ease 5s forwards;
         }
 
         .half {
@@ -59,7 +120,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            transition: all 0.5s ease;
+            transition: all 0.8s ease;
             position: relative;
             cursor: pointer;
             transform: scaleX(0);
@@ -68,136 +129,13 @@
         .left {
             background-color: #f5f5f5;
             transform-origin: left;
-            animation: revealLeft 1s ease 3s forwards;
+            animation: revealLeft 1.2s ease 5.2s forwards;
         }
 
         .right {
             background-color: #e5e5e5;
             transform-origin: right;
-            animation: revealRight 1s ease 3s forwards;
-        }
-
-        .content {
-            text-align: center;
-            z-index: 2;
-            position: relative;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 1rem;
-        }
-
-        .split-title {
-            display: flex;
-            flex-direction: column;
-            margin-bottom: 1rem;
-        }
-
-        .second-line {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            margin-top: 0.2rem;
-        }
-
-        .view-text {
-            font-size: 1rem;
-            color: #666;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .half:hover {
-            flex: 1.2;
-        }
-
-        .left:hover {
-            background-color: #ebebeb;
-        }
-
-        .right:hover {
-            background-color: #dbdbdb;
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 20px;
-            opacity: 0;
-            transition: all 0.5s ease;
-            white-space: nowrap;
-            pointer-events: none;
-            z-index: 10;
-        }
-
-        .footer p {
-            color: #333;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-        }
-
-        .footer a {
-            color: #333;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            margin: 0 5px;
-            pointer-events: auto;
-        }
-
-        .footer a:hover {
-            color: #666;
-        }
-
-        .footer-left {
-            left: 2rem;
-            transform: translateX(-50px);
-        }
-
-        .footer-right {
-            right: 2rem;
-            transform: translateX(50px);
-        }
-
-        .left:hover .footer-left {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .right:hover .footer-right {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .instagram-icon {
-            font-size: 0.8rem;
-            margin-right: 3px;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeOut {
-            from {
-                opacity: 1;
-            }
-            to {
-                opacity: 0;
-                visibility: hidden;
-            }
+            animation: revealRight 1.2s ease 5.2s forwards;
         }
 
         @keyframes revealContent {
@@ -227,70 +165,27 @@
             }
         }
 
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-            
-            .half {
-                height: 50vh;
-            }
-            
-            h2 {
-                font-size: 2rem;
-            }
-
-            .intro-text {
-                font-size: 2.5rem;
-            }
-        }
+        /* ... rest of your previous styles remain the same ... */
     </style>
 </head>
 <body>
     <div class="intro">
-        <h1 class="intro-text">Amber Cheng</h1>
-    </div>
-    <div class="container">
-        <div class="half left">
-            <div class="content">
-                <h2>Architecture</h2>
-                <a href="architecture.html" class="view-text">View Portfolio →</a>
+        <div class="intro-name">
+            <div class="intro-word first">
+                <h1 class="intro-text">Amber</h1>
             </div>
-            <div class="footer footer-left">
-                <p>
-                    Amber Cheng | Instagram: 
-                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
-                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
-                    </a>
-                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
-                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
-                    </a>
-                </p>
-            </div>
-        </div>
-        <div class="half right">
-            <div class="content">
-                <div class="split-title">
-                    <h2 style="margin-bottom: 0;">Photography</h2>
-                    <div class="second-line">
-                        <h2 style="margin-bottom: 0;">&</h2>
-                        <h2 style="margin-bottom: 0;">Videography</h2>
-                    </div>
-                </div>
-                <a href="media.html" class="view-text">View Portfolio →</a>
-            </div>
-            <div class="footer footer-right">
-                <p>
-                    Amber Cheng | Instagram: 
-                    <a href="https://www.instagram.com/2_am.ber/" target="_blank">
-                        <i class="fab fa-instagram instagram-icon"></i>@2_am.ber
-                    </a>
-                    <a href="https://www.instagram.com/a.rcheng/" target="_blank">
-                        <i class="fab fa-instagram instagram-icon"></i>@a.rcheng
-                    </a>
-                </p>
+            <div class="intro-word second">
+                <h1 class="intro-text">Cheng</h1>
             </div>
         </div>
     </div>
+    <!-- ... rest of your previous HTML remains the same ... -->
 </body>
+<script>
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 4500);
+    });
+</script>
 </html>

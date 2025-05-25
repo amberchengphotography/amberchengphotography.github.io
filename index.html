@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amber Cheng - Architecture & Photography</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* ... previous basic styles remain the same ... */
         body {
             font-family: 'Montserrat', sans-serif;
             overflow: hidden;
@@ -32,66 +31,59 @@
             align-items: center;
             background-color: transparent;
             z-index: 1000;
-            animation: fadeOut 1s ease 4.5s forwards;
+            animation: fadeOut 1s ease 6s forwards;
         }
 
         .intro-name {
             display: flex;
-            gap: 2rem;
-            position: relative;
+            justify-content: center;
+            align-items: center;
+            gap: 4rem; /* Space between AMBER and CHENG */
         }
 
-        .intro-word {
-            display: inline-block;
-            overflow: visible;
-            position: absolute;
+        .name-part {
+            display: flex;
+            gap: 1rem; /* Space between letters */
         }
 
-        .intro-word.first {
-            transform-origin: center;
-            animation: dropFirst 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-
-        .intro-word.second {
-            transform-origin: center;
-            animation: dropSecond 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s forwards;
-        }
-
-        .intro-text {
+        .letter {
             font-size: 4rem;
             color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 12px;
-            font-weight: 200;
-            white-space: nowrap;
+            font-weight: 500; /* Slightly bolder */
+            opacity: 0;
+            transform: translateY(-100vh) rotate(random(-45, 45));
+            display: inline-block;
         }
 
-        @keyframes dropFirst {
+        /* Individual letter animations */
+        .letter:nth-child(1) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.0s forwards; }
+        .letter:nth-child(2) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s forwards; }
+        .letter:nth-child(3) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.4s forwards; }
+        .letter:nth-child(4) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.6s forwards; }
+        .letter:nth-child(5) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s forwards; }
+
+        .letter.second-word:nth-child(1) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.2s forwards; }
+        .letter.second-word:nth-child(2) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s forwards; }
+        .letter.second-word:nth-child(3) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s forwards; }
+        .letter.second-word:nth-child(4) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.8s forwards; }
+        .letter.second-word:nth-child(5) { animation: dropLetter 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.0s forwards; }
+
+        @keyframes dropLetter {
             0% {
-                transform: translate(-100vw, -100vh) rotate(-45deg);
+                transform: translateY(-100vh) rotate(45deg);
                 opacity: 0;
             }
             60% {
-                transform: translate(-2rem, 0) rotate(-10deg);
+                transform: translateY(0) rotate(-10deg);
+                opacity: 1;
+            }
+            80% {
+                transform: translateY(0) rotate(5deg);
                 opacity: 1;
             }
             100% {
-                transform: translate(-2rem, 0) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        @keyframes dropSecond {
-            0% {
-                transform: translate(100vw, -100vh) rotate(45deg);
-                opacity: 0;
-            }
-            60% {
-                transform: translate(2rem, 0) rotate(10deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translate(2rem, 0) rotate(0deg);
+                transform: translateY(0) rotate(0);
                 opacity: 1;
             }
         }
@@ -112,70 +104,29 @@
             width: 100vw;
             position: relative;
             opacity: 0;
-            animation: revealContent 1.5s ease 5s forwards;
-        }
-
-        .half {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.8s ease;
-            position: relative;
-            cursor: pointer;
-            transform: scaleX(0);
-        }
-
-        .left {
-            background-color: #f5f5f5;
-            transform-origin: left;
-            animation: revealLeft 1.2s ease 5.2s forwards;
-        }
-
-        .right {
-            background-color: #e5e5e5;
-            transform-origin: right;
-            animation: revealRight 1.2s ease 5.2s forwards;
-        }
-
-        @keyframes revealContent {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes revealLeft {
-            from {
-                transform: scaleX(0);
-            }
-            to {
-                transform: scaleX(1);
-            }
-        }
-
-        @keyframes revealRight {
-            from {
-                transform: scaleX(0);
-            }
-            to {
-                transform: scaleX(1);
-            }
+            animation: revealContent 1.5s ease 6.5s forwards;
         }
 
         /* ... rest of your previous styles remain the same ... */
+
     </style>
 </head>
 <body>
     <div class="intro">
         <div class="intro-name">
-            <div class="intro-word first">
-                <h1 class="intro-text">Amber</h1>
+            <div class="name-part">
+                <span class="letter">A</span>
+                <span class="letter">M</span>
+                <span class="letter">B</span>
+                <span class="letter">E</span>
+                <span class="letter">R</span>
             </div>
-            <div class="intro-word second">
-                <h1 class="intro-text">Cheng</h1>
+            <div class="name-part">
+                <span class="letter second-word">C</span>
+                <span class="letter second-word">H</span>
+                <span class="letter second-word">E</span>
+                <span class="letter second-word">N</span>
+                <span class="letter second-word">G</span>
             </div>
         </div>
     </div>
@@ -185,7 +136,13 @@
     window.addEventListener('load', function() {
         setTimeout(function() {
             document.body.classList.add('loaded');
-        }, 4500);
+        }, 5500);
+    });
+
+    // Add random rotation to each letter
+    document.querySelectorAll('.letter').forEach(letter => {
+        const randomRotation = Math.random() * 90 - 45; // Random rotation between -45 and 45 degrees
+        letter.style.transform = `translateY(-100vh) rotate(${randomRotation}deg)`;
     });
 </script>
 </html>

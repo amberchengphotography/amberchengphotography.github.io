@@ -18,6 +18,31 @@
             overflow: hidden;
             height: 100vh;
             width: 100vw;
+            background-color: #f5f5f5;
+        }
+
+        .intro {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f5f5f5;
+            z-index: 1000;
+            animation: fadeOut 0.5s ease 2.5s forwards;
+        }
+
+        .intro-text {
+            font-size: 3.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease 0.5s forwards;
         }
 
         .container {
@@ -25,6 +50,8 @@
             height: 100vh;
             width: 100vw;
             position: relative;
+            opacity: 0;
+            animation: revealContent 1s ease 3s forwards;
         }
 
         .half {
@@ -35,14 +62,19 @@
             transition: all 0.5s ease;
             position: relative;
             cursor: pointer;
+            transform: scaleX(0);
         }
 
         .left {
             background-color: #f5f5f5;
+            transform-origin: left;
+            animation: revealLeft 1s ease 3s forwards;
         }
 
         .right {
             background-color: #e5e5e5;
+            transform-origin: right;
+            animation: revealRight 1s ease 3s forwards;
         }
 
         .content {
@@ -62,14 +94,15 @@
         .split-title {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .second-line {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 0.5rem;
+            margin-top: 0.2rem;
         }
 
         .view-text {
@@ -122,13 +155,13 @@
         }
 
         .footer-left {
-            right: 2rem;
-            transform: translateX(50px);
+            left: 2rem;
+            transform: translateX(-50px);
         }
 
         .footer-right {
-            left: 2rem;
-            transform: translateX(-50px);
+            right: 2rem;
+            transform: translateX(50px);
         }
 
         .left:hover .footer-left {
@@ -146,6 +179,54 @@
             margin-right: 3px;
         }
 
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        @keyframes revealContent {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes revealLeft {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes revealRight {
+            from {
+                transform: scaleX(0);
+            }
+            to {
+                transform: scaleX(1);
+            }
+        }
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -158,10 +239,17 @@
             h2 {
                 font-size: 2rem;
             }
+
+            .intro-text {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
+    <div class="intro">
+        <h1 class="intro-text">Amber Cheng</h1>
+    </div>
     <div class="container">
         <div class="half left">
             <div class="content">
@@ -183,7 +271,7 @@
         <div class="half right">
             <div class="content">
                 <div class="split-title">
-                    <h2>Photography</h2>
+                    <h2 style="margin-bottom: 0;">Photography</h2>
                     <div class="second-line">
                         <h2 style="margin-bottom: 0;">&</h2>
                         <h2 style="margin-bottom: 0;">Videography</h2>
